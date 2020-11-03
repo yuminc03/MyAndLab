@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fourbutton2Activity"></activity>
+        <activity android:name=".ch04widget.LovelyPetActivity"></activity>
+        <activity android:name=".ch04widget.BasicWidgetActivity" />
+        <activity android:name=".ch04widget.CalActivity" />
+        <activity android:name=".Fourbutton2Activity" />
         <activity android:name=".FourbuttonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
