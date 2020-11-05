@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import kr.hs.emirim.s2019w20.myandlab.ch04widget.BasicWidgetActivity
 import kr.hs.emirim.s2019w20.myandlab.ch04widget.CalActivity
+import kr.hs.emirim.s2019w20.myandlab.ch04widget.LovelyPetActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.button2).setOnClickListener(this)
         findViewById<Button>(R.id.button3).setOnClickListener(this)
         findViewById<Button>(R.id.button4).setOnClickListener(this)
+        findViewById<Button>(R.id.button5).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button2 -> intent = Intent(this, Fourbutton2Activity::class.java)
             R.id.button3 -> intent = Intent(this, CalActivity::class.java)
             R.id.button4 -> intent = Intent(this, BasicWidgetActivity::class.java)
+            R.id.button5 -> intent = Intent(this, LovelyPetActivity::class.java)
             else -> return
         }
         startActivity(intent)
