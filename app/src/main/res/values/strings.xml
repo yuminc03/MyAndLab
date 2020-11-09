@@ -14,4 +14,5 @@
     <string name="bulb">천정등</string>
     <string name="togglebutton">ToggleButton</string>
     <string name="pictures">애완동물 사진 보기</string>
+    <string name="rotate">회전하기</string>
 </resources>
