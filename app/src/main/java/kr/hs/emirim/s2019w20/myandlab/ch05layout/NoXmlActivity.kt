@@ -1,12 +1,12 @@
-package kr.hs.emirim.s2019w20.myandlab
+package kr.hs.emirim.s2019w20.myandlab.ch05layout
 
 import android.graphics.Color
-import android.graphics.Color.rgb
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
+import kr.hs.emirim.s2019w20.myandlab.R
 
 class NoXmlActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
