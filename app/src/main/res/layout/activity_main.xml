@@ -8,9 +8,10 @@
     android:layout_width="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="@drawable/ic_launcher_background">
 
         <Button
@@ -24,11 +25,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/btnFourbtn1"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button2"
@@ -41,11 +38,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/btnFourbtn2"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/button3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button3"
@@ -58,11 +51,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/btnCal"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/button4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button4"
@@ -75,11 +64,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/btnBasicwidget"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/button5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button5"
@@ -92,10 +77,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/togglebutton"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button6"
@@ -108,10 +90,7 @@
             android:layout_marginRight="32dp"
             android:text="@string/pictures"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button7"
@@ -124,12 +103,7 @@
             android:layout_marginRight="32dp"
             android:text="코드로 만든 버튼"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button6"
-            app:layout_constraintBottom_toTopOf="@+id/button8"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button8"
@@ -142,12 +116,21 @@
             android:layout_marginRight="32dp"
             android:text="@string/button_datetimebook"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button7" />
+            android:textSize="18sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/button_viewflipper"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </ScrollView>

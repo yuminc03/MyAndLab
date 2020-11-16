@@ -16,4 +16,5 @@
     <string name="pictures">애완동물 사진 보기</string>
     <string name="rotate">회전하기</string>
     <string name="button_datetimebook">날짜시간예약</string>
+    <string name="button_viewflipper">뷰플리퍼</string>
 </resources>
