@@ -17,4 +17,5 @@
     <string name="rotate">회전하기</string>
     <string name="button_datetimebook">날짜시간예약</string>
     <string name="button_viewflipper">뷰플리퍼</string>
+    <string name="button_tabhost">탭호스트</string>
 </resources>
