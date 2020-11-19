@@ -10,9 +10,7 @@ import kr.hs.emirim.s2019w20.myandlab.ch04widget.CalActivity
 import kr.hs.emirim.s2019w20.myandlab.ch04widget.LovelyPetActivity
 import kr.hs.emirim.s2019w20.myandlab.ch04widget.RotateImageActivity
 import kr.hs.emirim.s2019w20.myandlab.ch05layout.NoXmlActivity
-import kr.hs.emirim.s2019w20.myandlab.ch06advwidget.DateTimeBookActivity
-import kr.hs.emirim.s2019w20.myandlab.ch06advwidget.TabWidgetActivity
-import kr.hs.emirim.s2019w20.myandlab.ch06advwidget.ViewFlipperActivity
+import kr.hs.emirim.s2019w20.myandlab.ch06advwidget.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -30,6 +28,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.button8).setOnClickListener(this)
         findViewById<Button>(R.id.button9).setOnClickListener(this)
         findViewById<Button>(R.id.button10).setOnClickListener(this)
+        findViewById<Button>(R.id.button11).setOnClickListener(this)
+        findViewById<Button>(R.id.button12).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button8 -> intent = Intent(this, DateTimeBookActivity::class.java)
             R.id.button9 -> intent = Intent(this, ViewFlipperActivity::class.java)
             R.id.button10 -> intent = Intent(this, TabWidgetActivity::class.java)
+            R.id.button11 -> intent = Intent(this, TabFragmentActivity::class.java)
+            R.id.button12 -> intent = Intent(this, WebViewActivity::class.java)
             else -> return
         }
         startActivity(intent)

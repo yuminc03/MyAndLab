@@ -18,6 +18,7 @@ class TabFragmentActivity : AppCompatActivity(), ActionBar.TabListener {
     lateinit var tabSong : ActionBar.Tab
     lateinit var tabArtist : ActionBar.Tab
     lateinit var tabAlbum : ActionBar.Tab
+    var myFrag = arrayOfNulls<MyTabFragment>(3)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,16 +41,26 @@ class TabFragmentActivity : AppCompatActivity(), ActionBar.TabListener {
         bar.addTab(tabAlbum)
     }
 
-    override fun onTabSelected(tab: ActionBar.Tab?, ft: FragmentTransaction?) {
-        TODO("Not yet implemented")
+    override fun onTabSelected(tab: ActionBar.Tab, ft: FragmentTransaction) {
+        var myTabFrag : MyTabFragment? = null
+        if(myFrag[tab.position] == null){
+            myTabFrag = MyTabFragment()
+            val data = Bundle()
+            data.putString("tabName", tab.text.toString())
+            myTabFrag.arguments = data
+            myFrag[tab.position] = myTabFrag
+        }else{
+            myTabFrag = myFrag[tab.position]
+        }
+        ft.replace(android.R.id.content, myTabFrag!!)
     }
 
     override fun onTabUnselected(tab: ActionBar.Tab?, ft: FragmentTransaction?) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
     }
 
     override fun onTabReselected(tab: ActionBar.Tab?, ft: FragmentTransaction?) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
     }
 
     class MyTabFragment: Fragment(){

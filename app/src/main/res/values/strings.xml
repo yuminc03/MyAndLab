@@ -18,4 +18,6 @@
     <string name="button_datetimebook">날짜시간예약</string>
     <string name="button_viewflipper">뷰플리퍼</string>
     <string name="button_tabhost">탭호스트</string>
+    <string name="button_tabfrag">탭(프래그먼트)</string>
+    <string name="button_webView">웹 뷰</string>
 </resources>
