@@ -2,17 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.hs.emirim.s2019w20.myandlab">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
+        android:allowClearUserData="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ch06advwidget.WebViewActivity"/>
+        <activity android:name=".ch07menu.OptionMenuActivity"></activity>
+        <activity android:name=".ch06advwidget.WebViewActivity" />
         <activity android:name=".ch06advwidget.TabFragmentActivity" />
         <activity android:name=".ch06advwidget.TabWidgetActivity" />
         <activity android:name=".ch06advwidget.WidgetActivity" />

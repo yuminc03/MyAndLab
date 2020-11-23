@@ -33,6 +33,7 @@ class WebViewActivity : AppCompatActivity() {
         webSet.builtInZoomControls = true //확대, 축소 가능
 
         btnGo.setOnClickListener{
+            //web.loadUrl("http://google.co.kr")
             web.loadUrl(etUrl.text.toString())
             Toast.makeText(applicationContext, "URL은 " + etUrl.text.toString(), Toast.LENGTH_SHORT).show()
         }
