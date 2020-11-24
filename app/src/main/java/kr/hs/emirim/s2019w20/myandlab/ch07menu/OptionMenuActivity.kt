@@ -5,9 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Vibrator
-import android.view.Menu
-import android.view.MenuItem
-import android.view.SubMenu
+import android.view.*
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import kr.hs.emirim.s2019w20.myandlab.R
@@ -31,18 +29,40 @@ class OptionMenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_option_menu)
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         initFindViewById()
+
+        registerForContextMenu(findViewById<Button>(R.id.btnBackColor)) //context menu동작
+        registerForContextMenu(findViewById<Button>(R.id.btnButton))
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        var mInflater = this.menuInflater//menu불러옴
+        when(v!!.id){
+            R.id.btnBackColor -> {
+                menu!!.setHeaderTitle("배경색 변경")
+                mInflater.inflate(R.menu.menu_backcolor, menu)
+            }
+            R.id.btnButton -> {
+                menu!!.setHeaderTitle("버튼 변경")
+                mInflater.inflate(R.menu.menu_button, menu)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        //var mInflater = menuInflater
-        //mInflater.inflate(R.menu.menu1, menu)
-        menu!!.add(0, ITEM.RED.id, 0, ITEM.RED.name)
-        menu!!.add(0, ITEM.GREEN.id, 0, ITEM.GREEN.name)
-        menu!!.add(0, ITEM.BLUE.id, 0, ITEM.BLUE.name)
-        var sMenu : SubMenu = menu.addSubMenu("버튼 변경 >>")
-        sMenu!!.add(0, ITEM.ROTATE.id, 0, ITEM.ROTATE.name)
-        sMenu!!.add(0, ITEM.SIZEUP.id, 0, ITEM.SIZEUP.name)
+        var mInflater = menuInflater
+        mInflater.inflate(R.menu.menu1, menu)
+//        menu!!.add(0, ITEM.RED.id, 0, ITEM.RED.name)
+//        menu!!.add(0, ITEM.GREEN.id, 0, ITEM.GREEN.name)
+//        menu!!.add(0, ITEM.BLUE.id, 0, ITEM.BLUE.name)
+//        var sMenu : SubMenu = menu.addSubMenu("버튼 변경 >>")
+//        sMenu!!.add(0, ITEM.ROTATE.id, 0, ITEM.ROTATE.name)
+//        sMenu!!.add(0, ITEM.SIZEUP.id, 0, ITEM.SIZEUP.name)
         return true
     }
 
@@ -52,14 +72,23 @@ class OptionMenuActivity : AppCompatActivity() {
         vibrator.vibrate(longArrayOf(300, 200, 300, 300, 200, 300, 500), -1)
 
         when(item.itemId){
-            ITEM.RED.id ->{
+            R.id.item1, R.id.itemRed, ITEM.RED.id ->{
                 baseLayout.setBackgroundColor(Color.RED)
+                if(item.isCheckable)
+                    item.setChecked(true)
+                return true
             }
-            ITEM.GREEN.id ->{
+            R.id.item2, R.id.itemGreen, ITEM.GREEN.id ->{
                 baseLayout.setBackgroundColor(Color.GREEN)
+                if(item.isCheckable)
+                    item.setChecked(true)
+                return true
             }
-            ITEM.BLUE.id ->{
+            R.id.item3, R.id.itemBlue, ITEM.BLUE.id ->{
                 baseLayout.setBackgroundColor(Color.BLUE)
+                if(item.isCheckable)
+                    item.setChecked(true)
+                return true
             }
             ITEM.ROTATE.id ->{
                 btnThis.rotation = btnThis.rotation + 45f
@@ -76,5 +105,36 @@ class OptionMenuActivity : AppCompatActivity() {
     private fun initFindViewById() {
         baseLayout = findViewById(R.id.baseLayout)
         btnThis = findViewById(R.id.btnThis)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+        vibrator.vibrate(1000)
+        vibrator.vibrate(longArrayOf(300, 200, 300, 300, 200, 300, 500), -1)
+
+        when(item.itemId){
+            R.id.itemRed ->{
+                baseLayout.setBackgroundColor(Color.RED)
+                return true
+            }
+            R.id.itemGreen ->{
+                baseLayout.setBackgroundColor(Color.GREEN)
+                return true
+            }
+            R.id.itemBlue ->{
+                baseLayout.setBackgroundColor(Color.BLUE)
+                return true
+            }
+            R.id.subRotate ->{
+                btnThis.rotation = btnThis.rotation + 45f
+                return true
+            }
+            R.id.subSize ->{
+                btnThis.scaleX = btnThis.scaleX + 2f
+                btnThis.scaleY = btnThis.scaleY + 2f
+                return true
+            }
+        }
+        return false
     }
 }
