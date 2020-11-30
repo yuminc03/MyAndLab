@@ -3,7 +3,7 @@
     package="kr.hs.emirim.s2019w20.myandlab">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ch07menu.OptionMenuActivity"></activity>
+        <activity android:name=".ch07menu.MyWidgetActivity"></activity>
+        <activity android:name=".ch07menu.SnackbarActivity" />
+        <activity android:name=".ch07menu.OptionMenuActivity" />
         <activity android:name=".ch06advwidget.WebViewActivity" />
         <activity android:name=".ch06advwidget.TabFragmentActivity" />
         <activity android:name=".ch06advwidget.TabWidgetActivity" />

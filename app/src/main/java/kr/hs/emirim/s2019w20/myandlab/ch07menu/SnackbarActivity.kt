@@ -27,10 +27,37 @@ class SnackbarActivity : AppCompatActivity() {
             dlg.setTitle("Show me the money!")
             dlg.setMessage("용돈 좀 주세요~!")
             dlg.setIcon(R.drawable.dog)
-            dlg.setPositiveButton("긍정긍정OK", null)
+            dlg.setPositiveButton("긍정긍정OK", DialogInterface.OnClickListener{
+                dialog, which ->
+                Snackbar.make(it, "테스트", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(it, "테스트", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(it, "테스트", Snackbar.LENGTH_SHORT).show()
+
+            })
             dlg.setNegativeButton("부정부정..", null)
             dlg.setNeutralButton("이도저도", null)
             dlg.show()
+        }
+
+        findViewById<Button>(R.id.showmelistdialog).setOnClickListener {
+            val versionArray = arrayOf("체리", "딸기", "포도", "오랜지", "블루베리")
+            val checkArray = booleanArrayOf(true, false, false, false, false)
+
+            val dlg = AlertDialog.Builder(this@SnackbarActivity)
+            dlg.setTitle("좋아하는 과일은?").setIcon(R.mipmap.ic_launcher_round)
+//                .setItems(versionArray){
+//                        dialog, which -> (it as Button).text = versionArray[which]
+//                }
+//                .setMultiChoiceItems(versionArray, checkArray){//여러개 선택
+//                    dialog, which, isChecked ->
+//                    (it as Button).text = versionArray[which]
+//                }
+                .setSingleChoiceItems(versionArray, 0){//하나만 선택
+                    dialog, which ->
+                    (it as Button).text = versionArray[which]
+                }
+                .setPositiveButton("닫기", null)
+                .show()
         }
     }
 }

@@ -11,7 +11,9 @@ import kr.hs.emirim.s2019w20.myandlab.ch04widget.LovelyPetActivity
 import kr.hs.emirim.s2019w20.myandlab.ch04widget.RotateImageActivity
 import kr.hs.emirim.s2019w20.myandlab.ch05layout.NoXmlActivity
 import kr.hs.emirim.s2019w20.myandlab.ch06advwidget.*
+import kr.hs.emirim.s2019w20.myandlab.ch07menu.MyWidgetActivity
 import kr.hs.emirim.s2019w20.myandlab.ch07menu.OptionMenuActivity
+import kr.hs.emirim.s2019w20.myandlab.ch07menu.SnackbarActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.button11).setOnClickListener(this)
         findViewById<Button>(R.id.button12).setOnClickListener(this)
         findViewById<Button>(R.id.button13).setOnClickListener(this)
+        findViewById<Button>(R.id.button14).setOnClickListener(this)
+        findViewById<Button>(R.id.button15).setOnClickListener(this)
     }
 
 
@@ -51,6 +55,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button11 -> intent = Intent(this, TabFragmentActivity::class.java)
             R.id.button12 -> intent = Intent(this, WebViewActivity::class.java)
             R.id.button13 -> intent = Intent(this, OptionMenuActivity::class.java)
+            R.id.button14 -> intent = Intent(this, SnackbarActivity::class.java)
+            R.id.button15 -> intent = Intent(this, MyWidgetActivity::class.java)
             else -> return
         }
         startActivity(intent)
