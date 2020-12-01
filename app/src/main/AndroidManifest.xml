@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ch07menu.MyWidgetActivity"></activity>
+        <activity android:name=".ch08.ReadWriteActivity"></activity>
+        <activity android:name=".ch07menu.MyWidgetActivity" />
         <activity android:name=".ch07menu.SnackbarActivity" />
         <activity android:name=".ch07menu.OptionMenuActivity" />
         <activity android:name=".ch06advwidget.WebViewActivity" />

@@ -23,4 +23,5 @@
     <string name="button_menu">메뉴 만들기</string>
     <string name="button_snackbar">스낵 바</string>
     <string name="button_customdialog">커스텀 다이얼로그</string>
+    <string name="button_readwrite">fildInputStream</string>
 </resources>
