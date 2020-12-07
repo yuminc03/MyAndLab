@@ -15,6 +15,7 @@ import kr.hs.emirim.s2019w20.myandlab.ch07menu.MyWidgetActivity
 import kr.hs.emirim.s2019w20.myandlab.ch07menu.OptionMenuActivity
 import kr.hs.emirim.s2019w20.myandlab.ch07menu.SnackbarActivity
 import kr.hs.emirim.s2019w20.myandlab.ch08.ReadWriteActivity
+import kr.hs.emirim.s2019w20.myandlab.ch09canvas.CanvasActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.button14).setOnClickListener(this)
         findViewById<Button>(R.id.button15).setOnClickListener(this)
         findViewById<Button>(R.id.button16).setOnClickListener(this)
+        findViewById<Button>(R.id.button17).setOnClickListener(this)
     }
 
 
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button14 -> intent = Intent(this, SnackbarActivity::class.java)
             R.id.button15 -> intent = Intent(this, MyWidgetActivity::class.java)
             R.id.button16 -> intent = Intent(this, ReadWriteActivity::class.java)
+            R.id.button17 -> intent = Intent(this, CanvasActivity::class.java)
             else -> return
         }
         startActivity(intent)
