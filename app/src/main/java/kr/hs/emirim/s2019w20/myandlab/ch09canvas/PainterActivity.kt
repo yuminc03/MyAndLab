@@ -1,6 +1,8 @@
 package kr.hs.emirim.s2019w20.myandlab.ch09canvas
 
 import android.content.Context
+import android.graphics.BitmapFactory
+import android.graphics.BitmapFactory.decodeResource
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -116,6 +118,26 @@ class PainterActivity : AppCompatActivity() {
 
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
+
+            var picture = BitmapFactory.decodeResource(resources, R.drawable.cat)
+
+            var cenX = this.width / 2f
+            var cenY = this.height / 2f
+
+            val picX = (this.width - picture.width).toFloat() / 2
+            val picY = (this.height - picture.height) / 2f
+
+//            canvas.rotate(-45f, cenX, cenY)
+//            canvas.drawBitmap(picture, picX, picY, null)
+//            canvas.rotate(45f, cenX, cenY)
+
+            canvas.scale(2f, 2f, cenX, cenY)
+            canvas.skew(0.3f, 0.3f)
+            canvas.drawBitmap(picture, picX, picY, null)
+//            canvas.translate(-150f, 200f)
+//            canvas.drawBitmap(picture, picX, picY, null)
+
+            picture.recycle()
 
             val curPaint = Paint()
             curPaint.isAntiAlias = true
